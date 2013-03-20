@@ -93,7 +93,7 @@ function parseGalleryShortcode($specifiedAttributes)
         $output .= "</li>";
     }
 
-    $output = "</ul>";
+    $output .= "</ul>";
 
     return $output;
 }
