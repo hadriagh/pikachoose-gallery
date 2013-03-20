@@ -11,7 +11,7 @@ Author URI: http://github.com/hadriagh/
 define('PIKACHOOSE_GALLERY_VERSION', '0.1');
 define('PIKACHOOSE_GALLERY_URL', WP_PLUGIN_URL . '/pikachoose-gallery');
 
-wp_enqueue_style('pikachoose-whiteout', PIKACHOOSE_GALLERY_URL.'/css/pikeachoose-whiteout-theme.css', array(), PIKACHOOSE_GALLERY_VERSION);
+wp_enqueue_style('pikachoose-whiteout', PIKACHOOSE_GALLERY_URL.'/css/pikachoose-whiteout-theme.css', array(), PIKACHOOSE_GALLERY_VERSION);
 wp_enqueue_script('jquery');
 wp_enqueue_script('jcarousel', PIKACHOOSE_GALLERY_URL.'/js/jquery.jcarousel.min.js', array(), '', true);
 wp_enqueue_script('pikachoose', PIKACHOOSE_GALLERY_URL.'/js/jquery.pikachoose.js', array(), '4.5.0', true);
