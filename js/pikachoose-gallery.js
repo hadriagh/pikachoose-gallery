@@ -1,3 +1,3 @@
 jQuery(document).ready(function() {
-    jQuery('.pikachoose-gallery').PikaChoose({speed: 4000});
+    jQuery('.pikachoose-gallery').PikaChoose({carousel: true, speed: 4000});
 })
