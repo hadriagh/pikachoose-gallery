@@ -98,19 +98,19 @@
 
 
 .jcarousel-clip-horizontal{
-    width:510px;
+    width:640px;
     overflow:hidden;
     left:47px;}
 
 .jcarousel-container{
     position:relative;
-    width:600px;
+    width:725px;
     padding-top:8px;
     height:100px;
     z-index:10;
     overflow:hidden;
     top:10px;
-    left:10px;}
+    left:5px;}
 
 .jcarousel-prev,.jcarousel-next{
     width:35px;
