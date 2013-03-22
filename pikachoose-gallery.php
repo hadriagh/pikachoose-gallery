@@ -81,7 +81,7 @@ function parseGalleryShortcode($specifiedAttributes)
 
     $output = "<ul class='pikachoose-gallery'>";
     foreach($attachments as $id => $attachment) {
-        $link = isset($specifiedAttributes['link']) && 'file' == $specifiedAttributes['link'] ? wp_get_attachment_link($id, null, false, false) : wp_get_attachment_link($id, null, true, false);
+        $link = isset($specifiedAttributes['link']) && 'file' == $specifiedAttributes['link'] ? wp_get_attachment_link($id, array(100,65), false, false) : wp_get_attachment_link($id, array(100,65), true, false);
 
         $output .= "<li>";
         $output .= $link;
