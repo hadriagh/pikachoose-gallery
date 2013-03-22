@@ -11,7 +11,10 @@
     height:55px;}
 
 
-
+.pika-stage > a > img {
+    max-height: 530px;
+    max-width: 100%;
+}
 
 
 
