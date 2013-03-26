@@ -1,5 +1,6 @@
 /*modify these values to change the size of the stage or the thumbs */
 .pika-stage{
+    background-color: rgba(255, 255, 255, .7);
     width: 100%;
     text-align: center;
 }
