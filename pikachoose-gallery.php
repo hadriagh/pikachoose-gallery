@@ -81,10 +81,9 @@ function parseGalleryShortcode($specifiedAttributes)
 
     $output = "<ul class='pikachoose-gallery clear'>";
     foreach($attachments as $id => $attachment) {
-        $link = isset($specifiedAttributes['link']) && 'file' == $specifiedAttributes['link'] ? wp_get_attachment_link($id, array(100,65), false, false) : wp_get_attachment_link($id, array(100,65), true, false);
+        $image = wp_get_attachment_image_src($id, 100, 65);
 
-        $output .= "<li>";
-        $output .= $link;
+        $output .= '<li><img src="' . $image[0] . '" />';
 
         if($captiontag && trim($attachment->post_excerpt)) {
             $output .= "<span>" . wptexturize($attachment->post_excerpt) . "</span>";
