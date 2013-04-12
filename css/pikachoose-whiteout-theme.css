@@ -11,6 +11,7 @@
 }
 
 .pika-thumbs li img {
+    max-height: 65px;
     width: auto !important;
 }
 
