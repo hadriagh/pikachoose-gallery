@@ -7,8 +7,12 @@
 
 .pika-thumbs li{
     width: 100px;
-    height:55px;}
+    height:65px;
+}
 
+.pika-thumbs li img {
+    width: auto !important;
+}
 
 .pika-stage > a > img {
     width: auto !important;
@@ -98,7 +102,9 @@
 .pika-thumbs li .clip{
     position:relative;
     height:100%;
-    overflow: hidden;}
+    overflow: hidden;
+    text-align: center;
+}
 
 .pika-textnav{display:none;}
 .pika-counter{display:none;}
