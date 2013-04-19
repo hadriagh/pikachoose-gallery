@@ -34,9 +34,9 @@ function parseGalleryShortcode($specifiedAttributes)
     }
 
     if($specifiedAttributes['carousel'] == 'false') {
-        $carousel = false;
+        $carousel = 'false';
     } else {
-        $carousel = true;
+        $carousel = 'true';
     }
 
     // We're trusting author input, so let's at least make sure it looks like a valid orderby statement
