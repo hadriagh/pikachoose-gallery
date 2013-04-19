@@ -33,6 +33,12 @@ function parseGalleryShortcode($specifiedAttributes)
         $specifiedAttributes['include'] = $specifiedAttributes['ids'];
     }
 
+    if($specifiedAttributes['carousel'] == 'false') {
+        $carousel = false;
+    } else {
+        $carousel = true;
+    }
+
     // We're trusting author input, so let's at least make sure it looks like a valid orderby statement
     if (isset($specifiedAttributes['orderby'])) {
         $specifiedAttributes['orderby'] = sanitize_sql_orderby($specifiedAttributes['orderby']);
@@ -79,7 +85,7 @@ function parseGalleryShortcode($specifiedAttributes)
         return $output;
     }
 
-    $output = "<ul class='pikachoose-gallery clear'>";
+    $output = "<ul class='pikachoose-gallery clear' data-carousel='" . $carousel . "'>";
     foreach($attachments as $id => $attachment) {
         $image = wp_get_attachment_image_src($id, 100, 65);
 
