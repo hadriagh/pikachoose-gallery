@@ -1,5 +1,7 @@
 jQuery(document).ready(function() {
     jQuery('.pikachoose-gallery').each(function() {
-        jQuery(this).PikaChoose({carousel: jQuery(this).data('carousel'), speed: 4000});
+        var carousel = jQuery(this).data('carousel');
+
+        jQuery(this).PikaChoose({carousel: carousel, speed: 4000});
     });
 })
