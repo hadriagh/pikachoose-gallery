@@ -40,7 +40,7 @@
     left: 10px;
     z-index:9;}
 
-.pika-stage, .pika-thumbs li, .pika-stage .caption{
+.pika-stage, .pika-thumbs li {
     position: relative;
     -webkit-box-shadow: 0px 0px 10px 0px #000000;
     -moz-box-shadow: 0px 0px 10px 0px #000000;
