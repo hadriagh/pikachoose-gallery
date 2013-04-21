@@ -87,11 +87,14 @@ function parseGalleryShortcode($specifiedAttributes)
 
     $output = "<ul class='pikachoose-gallery clear' data-carousel='" . $carousel . "'>";
     foreach($attachments as $id => $attachment) {
+        var_dump($attachment); die;
+
+
         $image = wp_get_attachment_image_src($id, 100, 65);
 
         $output .= '<li><img src="' . $image[0] . '" />';
 
-        if($captiontag && trim($attachment->post_excerpt)) {
+        if(trim($attachment->post_excerpt)) {
             $output .= "<span>" . wptexturize($attachment->post_excerpt) . "</span>";
         }
 
