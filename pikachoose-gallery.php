@@ -108,10 +108,9 @@ function parseGalleryShortcode($specifiedAttributes)
         $output .= "</ul>";
     } else {
         $output = "<div class='gallery clearfix'>";
-        foreach($attachments as $attachment) {
-
-            var_dump($attachment); die;
-            $output .= '<div class="thumbnail"><img src="' . $attachment->guid . '" />';
+        foreach($attachments as $id => $attachment) {
+            $output .= '<div class="thumbnail">';
+            $output .= wp_get_attachment_link($id, array(100,65));
 
             if(trim($attachment->post_excerpt)) {
                 $output .= "<p class='caption'>" . wptexturize($attachment->post_excerpt) . "</p>";
