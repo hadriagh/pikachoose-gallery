@@ -39,6 +39,12 @@ function parseGalleryShortcode($specifiedAttributes)
         $carousel = 'true';
     }
 
+    if($specifiedAttributes['slideshow'] == 'false') {
+        $slideshow = 'false';
+    } else {
+        $slideshow = 'true';
+    }
+
     // We're trusting author input, so let's at least make sure it looks like a valid orderby statement
     if (isset($specifiedAttributes['orderby'])) {
         $specifiedAttributes['orderby'] = sanitize_sql_orderby($specifiedAttributes['orderby']);
@@ -85,18 +91,37 @@ function parseGalleryShortcode($specifiedAttributes)
         return $output;
     }
 
-    $output = "<ul class='pikachoose-gallery clear' data-carousel='" . $carousel . "'>";
-    foreach($attachments as $attachment) {
-        $output .= '<li><img src="' . $attachment->guid . '" />';
 
-        if(trim($attachment->post_excerpt)) {
-            $output .= "<span>" . wptexturize($attachment->post_excerpt) . "</span>";
+    if($slideshow) {
+        $output = "<ul class='pikachoose-gallery clear' data-carousel='" . $carousel . "'>";
+        foreach($attachments as $attachment) {
+            $output .= '<li><img src="' . $attachment->guid . '" />';
+
+            if(trim($attachment->post_excerpt)) {
+                $output .= "<span>" . wptexturize($attachment->post_excerpt) . "</span>";
+            }
+
+            $output .= "</li>";
         }
 
-        $output .= "</li>";
+        $output .= "</ul>";
+    } else {
+        $output = "<div class='gallery clearfix'>";
+        foreach($attachments as $attachment) {
+
+            var_dump($attachment); die;
+            $output .= '<div class="thumbnail"><img src="' . $attachment->guid . '" />';
+
+            if(trim($attachment->post_excerpt)) {
+                $output .= "<p class='caption'>" . wptexturize($attachment->post_excerpt) . "</p>";
+            }
+
+            $output .= "</div>";
+        }
+
+        $output .= "</div>";
     }
 
-    $output .= "</ul>";
 
     return $output;
 }
