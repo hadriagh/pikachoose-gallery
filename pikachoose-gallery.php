@@ -33,6 +33,7 @@ function parseGalleryShortcode($specifiedAttributes)
         $specifiedAttributes['include'] = $specifiedAttributes['ids'];
     }
 
+    // These are strings because they are used as HTML5 data objects later on!
     if($specifiedAttributes['carousel'] == 'false') {
         $carousel = 'false';
     } else {
@@ -40,9 +41,9 @@ function parseGalleryShortcode($specifiedAttributes)
     }
 
     if($specifiedAttributes['slideshow'] == 'false') {
-        $slideshow = 'false';
+        $slideshow = false;
     } else {
-        $slideshow = 'true';
+        $slideshow = true;
     }
 
     // We're trusting author input, so let's at least make sure it looks like a valid orderby statement
